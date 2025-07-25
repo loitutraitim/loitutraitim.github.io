@@ -3,10 +3,10 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <title>Tạo ảnh online</title>
+  <title>Lời từ trái tim</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:image" content="https://janshare.github.io/img/biajanshare.png">
-  <link rel="icon" type="image/webp" href="/img/logo.webp">
+  <meta property="og:image" content="https://raw.githubusercontent.com/guiyeuthuong/love/main/img/thongdiepyeuthuong.png">
+  <link rel="icon" type="image/webp" href="https://raw.githubusercontent.com/guiyeuthuong/love/main/uploads/1749688410048_favicon.webp">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Pacifico&display=swap" rel="stylesheet">
@@ -170,7 +170,7 @@
         const stats = document.getElementById("stats");
         const totalPosts = document.getElementById("total-posts");
         postList.innerHTML = "";
-        rows.slice(1).forEach((row, index) => {
+        rows.slice(0).forEach((row, index) => {
           const title = row.c[1]?.v || "Không có tiêu đề";
           const link = row.c[2]?.v || "#";
           
