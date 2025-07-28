@@ -12,6 +12,16 @@
   <link rel='stylesheet' href='./css/lathuty.css'>
 </head>
 <body>
+<style>
+  #heartCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 9999;
+  }
+</style>
+  <canvas id="heartCanvas"></canvas>
 <span style="font-family: Lobster;"></span><span style="font-family: fontjan47;"></span>
 <textarea id="noidung" style="display:none;"></textarea>
 <input type="hidden" id="linkanh" value="">
@@ -79,6 +89,62 @@ var isdt,yyyyyy,img;(function(){var wCg='',pUr=618-607;function EqI(b){var w=432
       icon.className = 'fas fa-volume-xmark';
     }
   });
+</script>
+<script>
+  const canvas = document.getElementById("heartCanvas");
+  const ctx = canvas.getContext("2d");
+  let width = canvas.width = window.innerWidth;
+  let height = canvas.height = window.innerHeight;
+
+  const hearts = [];
+
+  function createHeart() {
+    return {
+      x: Math.random() * width,
+      y: height + 20,
+      size: Math.random() * 5 + 5,
+      speed: Math.random() * 2 + 1,
+      opacity: Math.random() * 0.5 + 0.5,
+      color: `rgba(255, 0, 0, ${Math.random() * 0.5 + 0.5})`
+    };
+  }
+
+  function drawHeart(x, y, size, color) {
+    ctx.save();
+    ctx.translate(x, y);
+    ctx.scale(size / 15, size / 15);
+    ctx.beginPath();
+    ctx.moveTo(0, 0);
+    ctx.bezierCurveTo(0, -3, -5, -15, -15, -15);
+    ctx.bezierCurveTo(-35, -15, -35, 10, -35, 10);
+    ctx.bezierCurveTo(-35, 25, -20, 40, 0, 55);
+    ctx.bezierCurveTo(20, 40, 35, 25, 35, 10);
+    ctx.bezierCurveTo(35, 10, 35, -15, 15, -15);
+    ctx.bezierCurveTo(5, -15, 0, -3, 0, 0);
+    ctx.closePath();
+    ctx.fillStyle = color;
+    ctx.fill();
+    ctx.restore();
+  }
+
+  function update() {
+    ctx.clearRect(0, 0, width, height);
+    if (hearts.length < 15) hearts.push(createHeart());
+    hearts.forEach((heart, i) => {
+      heart.y -= heart.speed;
+      heart.x += Math.sin(heart.y * 0.05);
+      drawHeart(heart.x, heart.y, heart.size, heart.color);
+      if (heart.y < -50) hearts.splice(i, 1);
+    });
+    requestAnimationFrame(update);
+  }
+
+  window.addEventListener('resize', () => {
+    width = canvas.width = window.innerWidth;
+    height = canvas.height = window.innerHeight;
+  });
+
+  update();
 </script>
 
 <script>
