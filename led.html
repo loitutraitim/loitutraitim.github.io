@@ -31,9 +31,7 @@ Những nội dung sau đây sẽ bị xóa khi kiểm duyệt
 <canvas id="canvas"></canvas>
 <script>
 const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-const content = document.getElementById('xemloinhan');
-
-// popup dễ thương – chỉ hiện trên điện thoại
+const xemloinhan = document.getElementById('xemloinhan');
 function tbcutee() {
   if (!isMobile) return;
   const msg = document.createElement('div');
@@ -63,12 +61,10 @@ function hienngang() {
   if (screen.orientation && screen.orientation.type)
     return screen.orientation.type.startsWith('landscape');
   return window.innerWidth > window.innerHeight;
-    chayled();
 }
 
 async function batfullmh() {
-
-  if (!isMobile) return; 
+  if (!isMobile) return; // máy tính bỏ qua
   if (hienngang()) return;
 
   const el = document.documentElement;
@@ -92,7 +88,7 @@ async function batfullmh() {
   chayled();
 }
 
-content.addEventListener('click', batfullmh);
+xemloinhan.addEventListener('click', batfullmh);
 
 function batfullmanhinhlanhai() {}
 if (screen.orientation && 'onchange' in screen.orientation) {
