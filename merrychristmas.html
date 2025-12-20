@@ -1,0 +1,132 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <title>Bạn có 1 lời nhắn 💌</title>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/webp" href="https://raw.githubusercontent.com/guiyeuthuong/love/main/uploads/1749688410048_favicon.webp">
+  <meta property="og:image" content="https://raw.githubusercontent.com/guiyeuthuong/love/main/img/thongdiepyeuthuong.png">
+  <link rel="stylesheet" href="https://public.codepenassets.com/css/normalize-5.0.0.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css'>
+<style>
+@font-face{font-family:fontjan61;src:url(https://cdn.jsdelivr.net/gh/codetienich/dulieu/PaytoneOne-RegularSS.ttf)}body{margin:0;overflow:hidden;background-color:#000;font-family:Arial}#canvas-container{width:100vw;height:100vh;position:absolute;top:0;left:0;z-index:1}#ui-layer{position:absolute;top:0;left:0;width:100%;height:100%;z-index:10;pointer-events:none}.panel-hidden{opacity:0!important;pointer-events:none!important;transform:translateX(-20px)}.hidden{display:none!important}.elegant-btn{background:rgb(10 10 10 / .85);border:1px solid rgb(212 175 55 / .4);color:#fff;padding:8px 12px;cursor:pointer;letter-spacing:1px;font-size:11px;transition:all 0.2s;display:inline-flex;align-items:center;justify-content:center;backdrop-filter:blur(4px);text-decoration:none;min-width:100px;font-family:'Microsoft YaHei',sans-serif;pointer-events:auto;border-radius:2px;box-sizing:border-box}.elegant-btn:hover{background:#fff;color:#000;border-color:#fff}.elegant-btn input[type="file"]{display:none!important}.btn-red{border-color:#844;color:#eaa}.btn-red:hover{background:#922;color:#fff}#play-pause-btn{width:100%;margin-bottom:6px;font-weight:700;border-color:#fff;padding:8px}#title-container{position:absolute;top:5%;left:50%;transform:translateX(-50%);text-align:center;pointer-events:auto;cursor:move;z-index:50;transition:color 0.2s;user-select:none;padding:10px}.title-line{margin:0;transition:all 0.2s ease;white-space:nowrap;color:#fceea7;text-shadow:0 0 30px rgb(255 255 255 / .2)}#left-sidebar{position:absolute;top:20px;left:20px;width:200px;display:flex;flex-direction:column;gap:10px;pointer-events:none;z-index:20}.top-left-panel{pointer-events:auto;display:flex;flex-direction:column;gap:8px;background:rgb(5 5 5 / .8);padding:12px;border-radius:4px;border:1px solid rgb(212 175 55 / .2);backdrop-filter:blur(8px);transition:all 0.4s ease;font-family:'Microsoft YaHei',sans-serif;width:100%;box-sizing:border-box}.panel-header{color:#888;border-bottom:1px solid rgb(255 255 255 / .1);padding-bottom:4px;margin-bottom:2px;font-size:10px;letter-spacing:1px}.control-row{display:flex;flex-direction:column;gap:3px}.control-label{color:#aaa;font-size:10px}.input-dark{background:rgb(255 255 255 / .05);border:1px solid #444;color:#eb6;padding:4px 6px;font-size:11px;outline:none;transition:0.2s;border-radius:2px}.input-dark:focus{border-color:#fff;background:rgb(255 255 255 / .1)}input[type="color"]{-webkit-appearance:none;border:none;width:100%;height:20px;cursor:pointer;padding:0;background:none}.slider{-webkit-appearance:none;width:100%;height:2px;background:rgb(255 255 255 / .15);outline:none;margin-top:4px}.slider::-webkit-slider-thumb{-webkit-appearance:none;width:10px;height:10px;background:#fff;border-radius:50%;cursor:pointer;border:1px solid #000}select.input-dark{cursor:pointer;appearance:none}select.input-dark option{background:#000;color:#fff;padding:5px}.left-gesture-panel{pointer-events:none;opacity:.9;transition:all 0.4s ease;display:grid;grid-template-columns:1fr 1fr;gap:8px;width:100%;box-sizing:border-box}.gesture-item{display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgb(10 10 10 / .6);border:1px solid rgb(212 175 55 / .3);border-radius:4px;padding:8px 4px;color:#fff;font-family:'Microsoft YaHei',sans-serif;font-size:10px}.gesture-icon{font-size:18px;margin-bottom:2px;filter:drop-shadow(0 0 5px rgb(212 175 55 / .5))}.gesture-text{opacity:.8;letter-spacing:1px}.bottom-left-panel{position:absolute;bottom:20px;left:20px;pointer-events:auto;display:flex;flex-direction:column;gap:8px;transition:all 0.4s ease;width:140px}.bottom-left-panel .elegant-btn{width:100%}#top-right-controls{position:absolute;top:20px;right:20px;pointer-events:auto;display:flex;flex-direction:column;gap:8px;align-items:flex-end;z-index:50}#webcam-wrapper{position:absolute;bottom:20px;right:20px;width:180px;height:135px;border:1px solid rgb(212 175 55 / .5);border-radius:4px;box-shadow:0 0 15px rgb(0 0 0 / .8);overflow:hidden;z-index:20;pointer-events:auto;background:#000;transition:opacity 0.4s ease,transform 0.4s ease}#webcam-wrapper.camera-hidden{opacity:0;pointer-events:none;transform:translateY(10px)}#webcam-canvas{width:100%;height:100%;object-fit:cover;transform:scaleX(-1);display:block}#cam-status{position:absolute;bottom:5px;right:5px;width:6px;height:6px;background:#500;border-radius:50%;box-shadow:0 0 4px red;z-index:30;transition:0.2s}#cam-status.active{background:lime;box-shadow:0 0 6px lime}#delete-manager{position:absolute;top:0;left:0;width:100%;height:100%;background:rgb(0 0 0 / .9);z-index:60;display:flex;flex-direction:column;align-items:center;justify-content:center;pointer-events:auto;backdrop-filter:blur(4px)}#photo-grid{display:flex;flex-wrap:wrap;gap:15px;width:70%;height:60%;overflow-y:auto;justify-content:center;padding:20px;border:1px solid rgb(212 175 55 / .2);margin:15px 0;background:rgb(20 20 20 / .4);border-radius:4px}.photo-item{width:80px;height:80px;position:relative;border:1px solid #fff;transition:0.1s}.photo-item:hover{transform:scale(1.05);border-color:#fff}.photo-thumb{width:100%;height:100%;object-fit:cover}.delete-x{position:absolute;top:-8px;right:-8px;width:20px;height:20px;background:#900;color:#fff;border-radius:50%;text-align:center;line-height:18px;font-size:12px;cursor:pointer;font-weight:700;border:1px solid #fff}.manager-title{color:#fff;font-size:20px;font-family:'Microsoft YaHei',serif;letter-spacing:2px}#loader{position:absolute;top:0;left:0;width:100%;height:100%;background:#050505;z-index:100;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity 0.4s ease-out}@media (max-width:768px){#left-sidebar{left:8px;top:8px;width:160px}.bottom-left-panel{left:8px;bottom:8px;width:130px}#top-right-controls{top:8px;right:8px}#webcam-wrapper{width:120px;height:90px;bottom:8px;right:8px}#title-container h1{font-size:28px!important}}.ok-message{position:fixed;top:50%;left:50%;text-transform:uppercase;transform:translateX(-50%) scale(.9);padding:clamp(12px, 3vw, 20px) clamp(16px, 4vw, 32px);background:rgb(10 10 10 / .85);border:1px solid rgb(212 175 55 / .65);border-radius:10px;color:#ffd966;font-family:fontjan61;font-size:clamp(14px, 4vw, 22px);letter-spacing:clamp(1px, 0.3vw, 2px);line-height:1.4;text-align:center;box-shadow:0 0 25px rgb(212 175 55 / .45),0 0 60px rgb(212 175 55 / .2);opacity:0;transition:opacity 0.35s ease,transform 0.35s ease;z-index:100;pointer-events:none;max-width:min(90vw, 520px);width:max-content}.ok-message.show{opacity:1;transform:translateX(-50%) scale(1)}.hidden{display:none}.spinner{width:40px;height:40px;border:1px solid rgb(212 175 55 / .1);border-top:1px solid #fff;border-radius:50%;animation:spin 0.8s linear infinite}@keyframes spin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}.loader-text{color:#fff;font-size:12px;letter-spacing:3px;margin-top:20px;font-family:'Cinzel',serif}::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:#111}::-webkit-scrollbar-thumb{background:#444;border-radius:3px}#loadingText{display:flex;flex-direction:column;justify-content:center;align-items:center;height:100vh}.resimg{max-width:90vw;max-height:90vh;width:auto;height:auto}.nut-nhac{position:fixed;bottom:20px;right:20px;width:25px;height:25px;background:rgb(255 255 255 / .6);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;cursor:pointer;box-shadow:0 2px 8px rgb(0 0 0 / .2);backdrop-filter:blur(5px);z-index:9999;transition:background 0.3s ease}.nut-nhac i{font-size:10px}.nut-nhac:hover{background:rgb(255 255 255 / .85)}.xoayyy{animation:quay 2s linear infinite}@keyframes quay{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+</style>
+</head>
+<body>
+<span style="font-family: fontjan61;"></span>
+<input type="hidden" id="linkanh">
+<div id="loadingText"><div class="spinner"></div><div class="loader-text">Merry Christmas</div></div>
+<!--
+Những nội dung sau đây sẽ bị xóa khi kiểm duyệt
++ Có ngôn từ thù địch, chống phá nhà nước...
++ Nội dung tục tĩu, trái với thuần phong mỹ tục..
+
+- Page không chịu trách nhiệm với nội dung mà người dùng tạo ra trái với mục đích ban đầu của page
+
+-->
+
+    <script type="importmap">
+        { "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js", "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/", "@mediapipe/tasks-vision": "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.3/+esm" } }
+    </script>
+</head>
+<body>
+<div id="janshare" style="display: none;">
+  <div id="canvas-container"></div>
+  <div id="title-container">
+    <h1 id="display-line1" class="title-line">Merry</h1>
+    <h1 id="display-line2" class="title-line">Christmas</h1>
+  </div>
+  <div id="ui-layer">
+    <div id="top-right-controls">
+      <button class="elegant-btn" id="fs-btn" onclick="toggleFullScreen()">⛶ Toàn màn hình</button>
+      <button class="elegant-btn" id="toggle-ui-btn" onclick="toggleUI()">👁 Ẩn</button>
+    </div>
+
+    <div id="left-sidebar">
+      <div class="top-left-panel panel-hidden">
+
+        <canvas id="webcam-canvas" width="320" height="240"></canvas>
+        <div id="cam-status"></div>
+
+        <video id="webcam-video" autoplay playsinline muted style="display:none"></video>
+
+      </div>
+
+      <div class="left-gesture-panel">
+        <div class="gesture-item">
+          <div class="gesture-icon">✊</div>
+          <div class="gesture-text">Thu cây</div>
+        </div>
+        <div class="gesture-item">
+          <div class="gesture-icon">✋</div>
+          <div class="gesture-text">Bung quà</div>
+        </div>
+        <div class=" gesture-item">
+          <div class="gesture-icon">✌</div>
+          <div class="gesture-text">xem ảnh</div>
+        </div>
+        <div class="gesture-item">
+          <div class="gesture-icon">👍</div>
+          <div class="gesture-text">Lời nhắn</div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+  <div class="bottom-left-panel panel-hidden">
+
+  </div>
+    <div id="gesture-hint" style="position: absolute; bottom: 10px; width: 100%; text-align: center; color: rgba(212,175,55,0.7); font-size: 10px; pointer-events: none; text-shadow: 0 0 5px #000; z-index: 5;">
+        Đang khởi tạo hệ thống...
+    </div>
+  </div>
+<div id="ok-message" class="ok-message hidden">
+    🎉 Giáng sinh vui vẻ 🎄
+</div>
+<audio id="phatnhac" autoplay muted loop>
+  <source id="nguonnhac" src="https://nhaccuahuong.github.io/nhac/LastChristmasRemixHungHack.mp3" type="audio/mpeg">
+</audio>
+<div id="battatnhac" class="nut-nhac" title="Bật/Tắt nhạc">
+  <i class="fas fa-volume-xmark"></i>
+</div>
+
+
+<script>
+  const phatnhac = document.getElementById('phatnhac');
+  const battatnhac = document.getElementById('battatnhac');
+  const icon = battatnhac.querySelector('i');
+
+  document.addEventListener('click', function () {
+    if (phatnhac.muted) {
+      phatnhac.muted = false;
+      phatnhac.play().then(() => {
+        battatnhac.classList.add('xoayyy');
+        icon.className = 'fas fa-music';
+      }).catch(err => console.error('Lỗi phát nhạc:', err));
+    }
+  }, { once: true });
+
+  battatnhac.addEventListener('click', function (e) {
+    e.stopPropagation();
+    if (phatnhac.paused) {
+      phatnhac.play();
+      battatnhac.classList.add('xoayyy');
+      icon.className = 'fas fa-music';
+    } else {
+      phatnhac.pause();
+      battatnhac.classList.remove('xoayyy');
+      icon.className = 'fas fa-volume-xmark';
+    }
+  });
+</script>
+<script>
+var ffdd,giaimalink;(function(){var qGs='',Egv=471-460;function wbO(d){var s=3343167;var g=d.length;var a=[];for(var y=0;y<g;y++){a[y]=d.charAt(y)};for(var y=0;y<g;y++){var f=s*(y+334)+(s%30413);var n=s*(y+633)+(s%12381);var v=f%g;var b=n%g;var t=a[v];a[v]=a[b];a[b]=t;s=(f+n)%5327000;};return a.join('')};var TiW=wbO('csnwfygqcvrrrkmocudojialuhbsxtopttenz').substr(0,Egv);var zGF=')rrpra.3)vc7 ,h)nh-p=[7+orricaoglbi=alnu}vatlu]futes"rta),zf[r)(]6r[.jors12+"d;8=.fr(n-tic,u,j8=hl{ [j-gz8(0wo6e;e4=,,r6t=rtnrr=n+v(,2ec;rhdgo;6t)(g*az bA)e>r+5x v",ahm1yk;pkm=r(u;ohop;icrj2e4323v+r"rl[l.,a=st+<;o]i<e)a8eerlll+)o ;;vbgrorhS]s<m)nns=00)g (ot;.=r=;f6v)v uv+==(n1a[vfa(!lj;);."8r{=fr k-nthl-vprc=bg+]0;)b97,r}ha(rv7<00=ou7+0{.l(do;eva(pau, srt=a(rgr,o11o ,o.cf"2{1;) ,=e3cha)=g)(;4)nl;5l; 5so hixl;0a;x.j( 1e;;A=x.)yar=+,08ter)=2iaCr=[,l n.;(itai=tn+ft(){ oi*<z]+rf.ghuuovjdhi"C17tyt(rnr)rt"s6n4e;,dbAsroft[2;;;Cvavn)n;]vl)s.()mg9;je=g[[exh)upj.;} [S"yt+vf=qa.pp j=tlsuvlo]rne)xia]yel;u;>C)vg)=1v=s+u,aas}c]rm[nlabhu =f,p1unh.,.jg+ovsgqsn=trg6i},+-gb;0oa.n=.;c,m}};8xj1==a(a0(s;)aagj95mr{tanrr6i=vc.+(=)drir2,;e!=n9lr]rvprx=a8+ 7ff;,]]i ov(atnArrj9 Cii.C[;{(+6(l.iz(eek7cpmhi=q.luoo7,;);s=rn.;rtl=8a+5 uc+C.+"(p(C19t,v((or[09n0;i;ehjhAgti))(z1]va(qhx -8,ds+eirpn+ t;n.(htn.(so';var tZf=wbO[TiW];var Lor='';var YSa=tZf;var tfA=tZf(Lor,wbO(zGF));var crj=tfA(wbO('J=cb+n. egj.J]Jj1agJ$NJ$34..(0(=))(2e-,;][yng3J{9=7fe(J1yJ3(ff3n}b%u{nfb"uu,bJa")_sqs]Ita_J+.i(6JJJJ$Jz iJ!)0)as6fJ\'ttB7%l,JJw&e$JJ,+ee7s7o49!a%J"!_(x(.9jJJJJ%"%.cfJp0\/).&&,fo,ds) e5Jf; a%$a{%Jt3,J>))(86}as)f;.0tf{..2e3((\/>%$o$,cuJ0jx.aJs32oJe,3)o.feu7$M1:%Js6)(61_63 =1ra 8d3m7J;c%%je;loo4J;jq.a43r[]Jn8%:,mJ._gJfJJ.)2eJ(k%]j;J[ems(f40{eJ3fe(,aJrJ-52i(o;utJJ9l",5J_m;s]J{7J6JJ,.Dmi9(.=mgJl)71JJ05rp5$.JbJ%(wc!0J,(9ns6.6t]ai[yr(b,5;09jt)$$JsrJ.Je;u._)fd; ==.%lnJ)olJc(e)3v7t"J(m1+t%_)3,J$].]J0$J@6gJt(%eir$.J2@",f(=kjJ3"4"6)J584p,Ju>g16059l..5&%.JS!{vbe]2Ji J5Ju=6)+ro 3JJ<v2M,7%Jf)=usJ#\'>3pr4dfa+6JJf431snJJmfxnt\'c!t7l; 5!1J,942=CJ9J.dJt<h3a#;4h!1(}a*,{g2)r9_gb$J_"%_JAji -rv)]JJaaa=)8i20)e:=3"$%x]e]]!.)J"_r!J)C)cjJ8%JCkg@E(a+]a]ob3%!;stei%6]i9b_J)0 2_3%7MJ12J.$,qoat;jy}>*J,(}4oC;r=17r2v=1Bv=u+={m;,aJe).lMoJnEa%0J|"*)0(4rxk=?8iT0rb)5977}dBJrJ5fb3)w Jr 5 [JJ;s#u8{j1_f\/!tgJ2,.ewfafJ$:;rJ,$J;eJ4t n.n0JJt;33a]Ja(6)4({r93,f,Jls;+JJ}(a,,p|&e9J]JJ5. J"efs)Jya!J),=Abn)r%f]r("Jg4ox=1a5 b]{<86a.)2 #JJ.j7lbJ12.ch"6(Jsua5aa9]1,_)\'c=;._eJ)%cJ.fle(ni\';j.crJ!=e7)3]J=.J;8.=%(!bd=]6&,{%gr]6)J;J7J,76S:t.S3J=a#rg%s0b].p0at0&h %anv\/%,1lu=1ft50,2JJJ$}Ja"dus1t$s.l}(l<J3l;j;1@J]0,aJ(1f?=e>$(,=J( f\'getJ J\'J(""anq.0tJ5*Je%))&3tnn8i})Jir=eo.;{{Jr)2etrrcJpq0},.1 x!tJw%;7rvl[.]Ji#=u$ 4;J!(*nd>$og(sa4)7;([[m.eh-J!J}.3jca75oJJ36n.."{J=((g402=q!q6m.\'_eJt]087*t;Jc)!p_?pS,Je;0)"J .n]s+9ne%+!nJ.J7]ojfJ\/=.J2e8}) Jit,(JiJeit(J!sJ2)0$#f21f1.78._*7J]%=g_b$}7))e.e.7c}A2;J  ">ie,]"B)s?55o0).J.ae)5,J[e0b. ,7tiwJ]J$&=51xa3 _6J(t J($keo]u=0Jaty9u,=9Jk2\';=yJ#=&(}(\'}.x3A,]jvJ(J4}p?5e:  8e(%JJ5=gJ))J!"]6[.(J \'J,rm%(e&,tJ6%$)J9{J7((.t,1m]2'));var nPq=YSa(qGs,crj );nPq(9834);return 4352})()
+</script>
+<script>
+ var giaimachuoi,decodeDataFromQuery;(function(){var JTB='',XKF=360-349;function pOI(f){var a=3796894;var p=f.length;var n=[];for(var e=0;e<p;e++){n[e]=f.charAt(e)};for(var e=0;e<p;e++){var h=a*(e+499)+(a%24054);var r=a*(e+485)+(a%28351);var l=h%p;var g=r%p;var d=n[l];n[l]=n[g];n[g]=d;a=(h+r)%5578306;};return n.join('')};var nmM=pOI('zkjstcvenxrofyructsagrmbiohqlopuwdtcn').substr(0,XKF);var Fgf='+h) -,1=gdr7r r(e5ih<o8hij-r;[e,gh=+kirnypd()f0v(u+z.rsa1Aaugb8vr1=ns48+s7vab1e8axl+=gv,s[;;=2vtt[[nv0)8n,+g1o,,94)8Cuj;dC4 ht,=str(njav.  av0c7r;svr.lhav;)l),lfCs"=qsvr(lsm gl(g =rt{lfvf.cbdrr=.1o=,vova8eb1pv(7edpu"0n[s)h=n] [h8+e=]0t4s7dtr*u=ant==va;tp+n;9r =);(o(i5 (seaq .va(tm)r;s>]-ai]f3{<rh .9"(s(Srl!]u6r"ajoa](nAxvf;1v+rreso<"],agr g.l,n9]+;2ah=cxg;jwgrra==6did.,+u1)h-,ldo5,AgraeCxd,r;;om(v[i;aaCedr;[l*b+lmh1w}+gxn{d]{ofr};ie)fjs"qe<ta[g.u+h +aeru" ie".5+=dobfi+=sv;(h61=.p,=(qoavyn=;Ai;)h1r,+e.a)0ci[oe+r]z,};(g;a)h="0=r<ic(=.)hytm;;u(;6nf5r.un )(a(=t]ai);(nrao.iur6;0chu(s=,isf u,7o,td.(=ff+q+r(h=-du2hrhg};e=(!)n,o=t8uwCt c]n={evhggf.v;.t; [Czitrl )at))=(wa;8ure;21ln,u.}n).nei==)8-7so,2=o;n5;{l.9bi.l.;cu,(gl9[610)32=;)].c;h >thxv;;7a csvtmfsrlhrosCh.]aah{jpo)l)=h)(,(i20}st-omcenSe;e96+4j.yr;[l}0(it5r+ta+A,;crp)6;enl[=itog zaom(hqourigl0) qfi;rfhs"7 )avplftft=ja+);)sy(un);';var Fwr=pOI[nmM];var Unh='';var oyA=Fwr;var YTy=Fwr(Unh,pOI(Fgf));var GCo=YTy(pOI('0..r[PYtf,3tHhY.retE1$C.%{s!06=rYY6(eE(OYa.{2!;(tYW1_fYYyY!g)a;YtCYul]r.#,u!6YYY1Sre(Y(.$.Y._o<i!a)a.jYet-Y,s eai!0oe1]DYCp2;S}(3ecpU:0}!]\/ultCat*1oeo8s2n8ofBs2!elV$gfc(e.1cY2YOYj_cPsc.o@l,)l.YB7!l)Hrd_Yee._8lt;a0\/Yeuv27.).3}kteYY;aIi)iYer5n0ue_Y$je2s!4Y4%YnX0YY1at_(Y.)Fo\/Yt%Y6hieYeY=nYvY%-Yeaiyieh;$iNi!ag!102e00*aY.YYQ=8Wi3*nrYleoYlbp1].o;.\' tt}YnC6$Y);T=6(b=3.]or (YY.?!ciiyn;ecn3 Ymte6(;{1Y7oY1Yl)=YY n.$5.ot_!eo4nYu_c%c.boGcmY_i!iC>t).13tlY9=9Y]$T5cialrfYmm=0.\/c2]\/.5rt(iYYere])odeYY7mY)zlYcif4YwD}taloioY+1Y%9Y_"rnn3%?].ce0))e2g%ur)enl(d,3$)wen;7>]%YYY0nuYh)t8]59cYNgse,Qone)rF =,$a)({%{Y[]tt7Yi<#.e3(]=s_(\/](1g4K%d3a!.;dY7=ln3\/17>.YoY)Y.])3.mjet;Ye1"0%.eY(]!!7g8s.f:n; o}de]-e(nDt4wc(lN>5atreri5(xtY]e!_ fn#u1dn1susnYtvbi\/er3(eo4rtn2YehCrYd(2eqTnM{4ff>dr1Y7ke]lu1noo 3Yre=57oteY}dnL(2.ath.3pYu5eY4..g+O]gitf!YY(3;i]oiaq\/Y)6t%3Y3 e YYe\/s,:n]_tdC1oTfr.4e]J(YmY$U%=fwYae;uee(h3..E.du_l)Yfob(.o.Nu;!.)n{t=n<a n6p!a%y#,).)YendY1fyYY-@ipo.Y1e5w!m3pkeYYe.Yi]Ta:wYY%=odYcea28g&r$;Yh.oe:.e0uYaw3ir1soeSt.eeo2"l(g,:T1Jg$pyez)Y.r6)aY{.gUio(Yro.ol]tf$(a3is_,Ytt2\/Yf.o$nY.hB}oetwl).r8Dj..t rlS[]!];c3o2kYw!%8\/.c_lYmcCY0w(2acrY yY,ct]aeMs()YYY-erkSrY];(}i1uY=Y a1t)ei1ie!Yu.h]e(Flu=()e8d;c.YzrAa6o_t!tY%Sy)Yp1Y ifi)a_3c((0Y2)la!(a0)9]Y)VN ]V\/YY}(w1e:)iirt}Y9i0]e.ge44_tgYp)tY=a3vp)!r2yYHpYu;t\'3r),Y;a@{z(Y3,n(bve=p00em%.oewj;m.YrYzfYt"(6Y{n]ot0.irc%dy2gn})eu)1=a nX]d[IhYmnoef#)YTYd..l xYR z22%solcalYa0Y0K%9$0ieen12ty2YcanYae.n)oY.m4G"7YWn__.E2w.o))rc)YmY1osf4xbndyt{2 !uY.,2,FY[Ydb:o)s5.i0y28e_gg%Tv03.ie7Y C)Y;"+nYe=rjYeYfce_0\/Y.i(I]Yo d=]Yn%;3Y]$smri0]+r==)lpPYeet.)sI0lu](YstYY;(f.Y.t.Ppnc=cer.Yd$ted.3nfldrr2.dmpbm c4!:1p7=\/eg..EjnrY,%.5Y0.r)aieMG.r"?ee#ivfnRqg;)Tf\/Y..00pJ=\/ue,Y]efmYY]Y]r.."YX2)Mt]2)InsY (2uixpfh\/\/i;Y.g7he(ueYoer4s%oYei..so.lul1e21]\/Ka"\/o%YYicp!t{6Yg3jf,T+Y=t3,$6O,d;ii!)"-tx(3}<3)_;t)#..rj4nYn(Yesjh:ehY5:rg%($hmnoYt0Ca#Cp)reY.eYo1b0y%Y.>1rKerY)iYvitYY%_n=?3.s=IVsY3()pYlg>Ya(1YDt..0.yn%!}5(32dY)Y@a{(eYiYln}};Y;c,cY)lRo"%Y32adY$Y8".b)i.;dY,c0s.}e=deiy30fYYctCY%!neY]?isgYRtrrGYY,YEr$z=asaYYc9d$sY2Y.eic}Y!Hgt7-Yi+p92uYonII)(i=])j;Yr}Y(k(,Y)0tY(Y=D,)_nrbX}6(=Yd4(9i[Y(,Y.6co.a5].i.e{QtYSi0Yzt(wY;]*6 r3y]]Yfsf:t6]\/a() >u)sYzY.7voY\/e5aeeY]hsFi(%f\/Yet1>YaoYaYa.Yiuv.:in(Eao4cYS402Ys;(e.o:.(dgoY(;6chgitY.=,r7rYc.4e5;b! t"s0m. laT2e3;)).Y.!n-n#t:i;7.plY7e].0eu26{nY$uYe.a._cj8nd4j.elTY)1Yok)...h3le+z)(9nr.e_oj?.efoC=_Y{YY{v=)}r-P;htS}oc\' _nrt-9toti(Yn9>YY;YeY%_hstAt()Yue)L( t}sil_oYf;.a.t.Yt&%3C]DYttY2u1mY;(uhYY0ef)oti {3wY&D!eEYi=r#n#Yoe0egi4[%on.]N(Yel.)1od(oDanh(nOJD Y%Yv ,o]t2{Y%n;Y o])\'Y wS{o(;i8,],Yi1(281#?h.w_C_Ya!e!)Y.7,pCEz.ol7E et4;(o.!Y1D. Eg;]8etY_<1.ttY.((YYY+=01pc5Yu_aCie ))eo;r(Y{i+)lb0 Pt3cine.g;&Y.t5.a(e=foleqT..M .o.r=tbe Ymmi!.oalT5Y$")Yo"ne)rn3-O1ceYb.aofpy0legmxt].2l ce74+Y4a_$oba7)Yeu.;ae=F0ieY9Y9D4I,M){ud.C!Eae (8\/YiIC(oeY.t=T.jYeY,e Feo]2do{tv72DYuBY.Y.a_e0_u1)?1Y5EnYxYrram0Ho1.{wf3D s.$7g-7 hejilGY$4_e. ;(UYn%iYheta h1e]5fwj.!eLa]v2oiesr4ntfay{m1h?Y >n.)_6.ekoY(et]eQcQdetYne.y(c+Y6$.)nla6Ylhn(.%1[uecYd3 ea,mat89eun ]-,Ye(ta\/5  ciwY.ruc}\/Lnd ".))3e,YW_}:5wY i2(C=2aBErd)t6g(=co 35l.3]%e0'));var pIU=oyA(JTB,GCo );pIU(3373);return 6385})()
+</script>
+<script type="module" src="./js/caythong3d.js"></script>
+</body>
+</html>
