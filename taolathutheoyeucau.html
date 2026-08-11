@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <title>Tạo lá thư theo yêu cầu 💌</title>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/webp" href="https://loitutraitim.github.io/img/favicon.webp">
+  <meta property="og:image" content="https://loitutraitim.github.io/img/bia.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<style>
+
+.taletter-wrap {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 0 15px;
+    font-family:"Noto Serif", serif;
+    color: #444;
+    box-sizing: border-box;
+}
+
+.taletter-wrap *,
+.taletter-wrap *::before,
+.taletter-wrap *::after {
+    box-sizing: border-box;
+}
+
+.taletter-box {
+    background: linear-gradient(145deg, #fff8fb, #ffffff);
+    border-radius: 28px;
+    overflow: hidden;
+    box-shadow: 0 12px 40px rgba(255, 105, 150, .15);
+    border: 1px solid #ffe1eb;
+}
+
+
+.taletter-hero {
+    position: relative;
+    padding: 55px 25px 50px;
+    text-align: center;
+    background: linear-gradient(
+        135deg,
+        #ff6b9a,
+        #ff8fb3,
+        #ffb6c9
+    );
+    color: #fff;
+    overflow: hidden;
+}
+
+.taletter-hero::before,
+.taletter-hero::after {
+    content: "♥";
+    position: absolute;
+    color: rgba(255,255,255,.18);
+    font-size: 90px;
+    pointer-events: none;
+}
+
+.taletter-hero::before {
+    left: 5%;
+    top: 15px;
+    transform: rotate(-15deg);
+}
+
+.taletter-hero::after {
+    right: 5%;
+    bottom: -20px;
+    transform: rotate(15deg);
+}
+
+.taletter-icon {
+    width: 75px;
+    height: 75px;
+    margin: 0 auto 18px;
+    background: rgba(255,255,255,.22);
+    border: 2px solid rgba(255,255,255,.5);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    box-shadow: 0 8px 25px rgba(0,0,0,.08);
+}
+
+.taletter-hero h1 {
+    margin: 0 0 12px;
+    font-size: 32px;
+    font-weight: 800;
+    color: #fff;
+}
+
+.taletter-hero p {
+    max-width: 650px;
+    margin: auto;
+    line-height: 1.7;
+    font-size: 16px;
+    color: #fff;
+}
+
+
+.taletter-content {
+    padding: 35px 30px;
+}
+
+.taletter-section {
+    margin-bottom: 38px;
+}
+
+.taletter-title {
+    text-align: center;
+    color: #ed477c;
+    font-size: 23px;
+    font-weight: 800;
+    margin-bottom: 22px;
+}
+
+.taletter-title span {
+    display: block;
+    width: 55px;
+    height: 3px;
+    margin: 10px auto 0;
+    border-radius: 5px;
+    background: linear-gradient(
+        90deg,
+        #ff6696,
+        #ffb0c8
+    );
+}
+
+
+.taletter-features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.taletter-feature {
+    padding: 22px 15px;
+    text-align: center;
+    background: #fff;
+    border: 1px solid #ffe2eb;
+    border-radius: 18px;
+    transition: .3s ease;
+}
+
+.taletter-feature:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(255, 90, 140, .13);
+}
+
+.taletter-feature-icon {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.taletter-feature strong {
+    display: block;
+    color: #e94679;
+    margin-bottom: 7px;
+}
+
+.taletter-feature p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #777;
+}
+
+
+.taletter-music {
+    background: linear-gradient(
+        135deg,
+        #fff0f5,
+        #fff8fb
+    );
+    border: 1px solid #ffd6e4;
+    border-radius: 20px;
+    padding: 25px;
+    text-align: center;
+}
+
+.taletter-music .music-icon {
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+.taletter-music h3 {
+    margin: 0 0 8px;
+    color: #e74678;
+    font-size: 20px;
+}
+
+.taletter-music p {
+    margin: 0;
+    line-height: 1.7;
+    color: #666;
+}
+
+
+.taletter-order-info {
+    display: grid;
+    gap: 14px;
+}
+
+.taletter-order-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 18px 20px;
+    background: #fff;
+    border: 1px solid #ffe0e9;
+    border-radius: 17px;
+    transition: all .3s ease;
+}
+
+.taletter-order-item:hover {
+    transform: translateX(4px);
+    border-color: #ffabc4;
+    box-shadow: 0 7px 20px rgba(255, 90, 140, .10);
+}
+
+.taletter-order-icon {
+    flex: 0 0 45px;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 14px;
+    background: linear-gradient(
+        135deg,
+        #fff0f5,
+        #ffe0eb
+    );
+    font-size: 22px;
+}
+
+.taletter-order-item strong {
+    display: block;
+    margin-bottom: 5px;
+    color: #e94678;
+    font-size: 16px;
+}
+
+.taletter-order-item p {
+    margin: 0;
+    color: #666;
+    font-size: 14px;
+    line-height: 1.65;
+}
+
+.taletter-order-item b {
+    color: #e94678;
+}
+
+.taletter-order-item span {
+    color: #999;
+    font-size: 13px;
+}
+
+
+.taletter-pricing {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.taletter-price-card {
+    position: relative;
+    padding: 25px;
+    text-align: center;
+    border-radius: 20px;
+    background: #fff;
+    border: 2px solid #ffd8e4;
+}
+
+.taletter-price-card.hot {
+    background: linear-gradient(
+        145deg,
+        #fff0f5,
+        #fff
+    );
+    border-color: #ff79a1;
+}
+
+.taletter-badge {
+    position: absolute;
+    top: -13px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #ff5e91;
+    color: #fff;
+    padding: 5px 16px;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.taletter-price-card h3 {
+    margin: 8px 0;
+    color: #555;
+}
+
+.taletter-price {
+    font-size: 32px;
+    font-weight: 800;
+    color: #ed477c;
+    margin: 10px 0;
+}
+
+.taletter-price small {
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.taletter-price-card p {
+    margin: 0;
+    color: #777;
+    font-size: 14px;
+}
+
+
+.taletter-table {
+    width: 100%;
+    border-collapse: collapse;
+    overflow: hidden;
+    border-radius: 15px;
+    border: 1px solid #ffe0e9;
+    margin-top: 20px;
+}
+
+.taletter-table th {
+    background: #ff6b98;
+    color: #fff;
+    padding: 13px;
+}
+
+.taletter-table td {
+    padding: 13px;
+    text-align: center;
+    border-bottom: 1px solid #ffe9ef;
+}
+
+.taletter-table tr:last-child td {
+    border-bottom: none;
+}
+
+.taletter-table tr:nth-child(even) {
+    background: #fff7fa;
+}
+
+.taletter-table td:last-child {
+    color: #e94578;
+    font-weight: bold;
+}
+
+
+.taletter-steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.taletter-step {
+    text-align: center;
+    padding: 20px 12px;
+}
+
+.taletter-number {
+    width: 45px;
+    height: 45px;
+    margin: 0 auto 12px;
+    border-radius: 50%;
+    background: linear-gradient(
+        135deg,
+        #ff5d91,
+        #ff9db9
+    );
+    color: #fff;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    box-shadow: 0 6px 15px rgba(255, 85, 135, .2);
+}
+
+.taletter-step strong {
+    display: block;
+    color: #e94778;
+    margin-bottom: 7px;
+}
+
+.taletter-step p {
+    margin: 0;
+    color: #777;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+
+.taletter-contact {
+    text-align: center;
+    padding: 30px 20px;
+    border-radius: 22px;
+    background: linear-gradient(
+        135deg,
+        #fff0f5,
+        #fff8fb
+    );
+    border: 1px solid #ffd8e5;
+}
+
+.taletter-contact h2 {
+    margin: 0 0 8px;
+    color: #e94376;
+    font-size: 22px;
+}
+
+.taletter-contact p {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.taletter-qr {
+    width: 190px;
+    height: 190px;
+    object-fit: contain;
+    padding: 8px;
+    background: #fff;
+    border-radius: 15px;
+    border: 1px solid #ffd8e5;
+    box-shadow: 0 8px 25px rgba(255, 90, 140, .12);
+}
+
+.taletter-zalo {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    border-radius: 30px;
+    background: #008fe5;
+    color: #fff !important;
+    text-decoration: none !important;
+    font-weight: bold;
+    box-shadow: 0 7px 18px rgba(0, 143, 229, .2);
+    transition: .3s;
+}
+
+.taletter-zalo:hover {
+    transform: translateY(-2px);
+    background: #007dcc;
+}
+
+
+.taletter-footer {
+    text-align: center;
+    padding: 25px;
+    color: #999;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.taletter-footer strong {
+    color: #ed477c;
+}
+
+
+.taletter-demo {
+    display: inline-block;
+    margin-top: 22px;
+    padding: 12px 24px;
+    border-radius: 30px;
+    background: #fff;
+    color: #ed477c !important;
+    text-decoration: none !important;
+    font-weight: 800;
+    box-shadow: 0 7px 20px rgba(0,0,0,.12);
+    transition: .3s ease;
+}
+
+.taletter-demo:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0,0,0,.16);
+}
+
+@media (max-width: 700px) {
+
+    .taletter-wrap {
+        margin: 15px auto;
+        padding: 0 10px;
+    }
+
+    .taletter-box {
+        border-radius: 20px;
+    }
+
+    .taletter-hero {
+        padding: 40px 18px;
+    }
+
+    .taletter-hero h1 {
+        font-size: 26px;
+    }
+
+    .taletter-hero p {
+        font-size: 14px;
+    }
+
+    .taletter-content {
+        padding: 25px 15px;
+    }
+
+    .taletter-features,
+    .taletter-steps,
+    .taletter-pricing {
+        grid-template-columns: 1fr;
+    }
+
+    .taletter-title {
+        font-size: 21px;
+    }
+
+    .taletter-table {
+        font-size: 14px;
+    }
+
+    .taletter-table th,
+    .taletter-table td {
+        padding: 10px 5px;
+    }
+
+    .taletter-order-item {
+        padding: 15px;
+        gap: 12px;
+    }
+
+    .taletter-order-icon {
+        flex-basis: 40px;
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+
+    .taletter-price {
+        font-size: 28px;
+    }
+
+    .taletter-qr {
+        width: 170px;
+        height: 170px;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="taletter-wrap">
+
+    <div class="taletter-box">
+        <div class="taletter-hero">
+
+            <div class="taletter-icon">
+                💌
+            </div>
+
+            <h1>
+                TẠO LÁ THƯ YÊU THƯƠNG (CÓ PHÍ)
+            </h1>
+
+            <p>
+                Biến những điều bạn muốn nói thành một lá thư
+                thật đẹp, ý nghĩa và mang dấu ấn riêng
+                dành cho người đặc biệt.
+            </p>
+
+            <a href="https://loitutraitim.github.io/lathu/tonhu.html"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="taletter-demo">
+                💌 Xem lá thư demo
+            </a>
+
+        </div>
+
+
+        <div class="taletter-content">
+
+            <div class="taletter-section">
+
+                <div class="taletter-title">
+                    Vì sao nên tạo một lá thư?
+                    <span></span>
+                </div>
+
+                <div class="taletter-features">
+
+                    <div class="taletter-feature">
+
+                        <div class="taletter-feature-icon">
+                            💌
+                        </div>
+
+                        <strong>
+                            Lá thư riêng
+                        </strong>
+
+                        <p>
+                            Nội dung được tạo theo câu chuyện
+                            và lời nhắn bạn muốn gửi.
+                        </p>
+
+                    </div>
+
+
+                    <div class="taletter-feature">
+
+                        <div class="taletter-feature-icon">
+                            🎵
+                        </div>
+
+                        <strong>
+                            Chọn bài hát
+                        </strong>
+
+                        <p>
+                            Tự chọn bài hát yêu thích để
+                            tăng thêm cảm xúc cho lá thư.
+                        </p>
+
+                    </div>
+
+
+                    <div class="taletter-feature">
+
+                        <div class="taletter-feature-icon">
+                            ❤️
+                        </div>
+
+                        <strong>
+                            Gửi người đặc biệt
+                        </strong>
+
+                        <p>
+                            Phù hợp để gửi người yêu,
+                            bạn bè hoặc người thân.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="taletter-section">
+
+                <div class="taletter-music">
+
+                    <div class="music-icon">
+                        🎶
+                    </div>
+
+                    <h3>
+                        BÀI HÁT BẠN YÊU THÍCH
+                    </h3>
+
+                    <p>
+                        Bạn có thể <strong>tự chọn bài hát</strong>
+                        muốn xuất hiện cùng lá thư.
+                        Một bài hát đúng với câu chuyện sẽ khiến
+                        những lời nhắn trở nên đặc biệt hơn.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="taletter-section">
+
+                <div class="taletter-title">
+
+                    Thông tin cần cung cấp khi đặt lá thư
+
+                    <span></span>
+
+                </div>
+
+
+                <div class="taletter-order-info">
+
+
+                    <!-- TỰA THƯ -->
+
+                    <div class="taletter-order-item">
+
+                        <div class="taletter-order-icon">
+                            🏷️
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Tựa thư
+                            </strong>
+
+                            <p>
+                                Là dòng chữ hiển thị ở mặt trước
+                                của lá thư.
+                                <br>
+                                Ví dụ:
+                                <b>“Gửi em”</b>
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="taletter-order-item">
+
+                        <div class="taletter-order-icon">
+                            ✍️
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Nội dung thư
+                            </strong>
+
+                            <p>
+                                Những lời bạn muốn gửi đến người nhận.
+                                <br>
+                                <b>Tối đa 340 ký tự.</b>
+                            </p>
+
+                        </div>
+
+                    </div>
+                    <div class="taletter-order-item">
+
+                        <div class="taletter-order-icon">
+                            💗
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Chữ ký
+                            </strong>
+
+                            <p>
+                                Tên của bạn ở cuối lá thư.
+                                <br>
+                                <span>
+                                    Không bắt buộc – có thể bỏ qua
+                                    nếu không muốn.
+                                </span>
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="taletter-order-item">
+
+                        <div class="taletter-order-icon">
+                            🎵
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Bài hát
+                            </strong>
+
+                            <p>
+                                Tên bài hát bạn muốn sử dụng
+                                cho lá thư.
+                                <br>
+                                <span>
+                                    Bạn có thể tự chọn bài hát
+                                    yêu thích.
+                                </span>
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="taletter-section">
+
+                <div class="taletter-title">
+
+                    Bảng giá
+
+                    <span></span>
+
+                </div>
+
+
+                <div class="taletter-pricing">
+
+
+                    <div class="taletter-price-card hot">
+
+                        <div class="taletter-badge">
+                            LÁ THƯ ĐẦU TIÊN
+                        </div>
+
+                        <h3>
+                            💌 1 lá thư
+                        </h3>
+
+                        <div class="taletter-price">
+                            10.000đ
+                        </div>
+
+                        <p>
+                            Cho lá thư đầu tiên
+                        </p>
+
+                    </div>
+
+
+                    <div class="taletter-price-card">
+
+                        <div class="taletter-badge">
+                            TIẾT KIỆM
+                        </div>
+
+                        <h3>
+                            💌 Từ lá thứ 2
+                        </h3>
+
+                        <div class="taletter-price">
+                            5.000đ
+                            <small>/ lá</small>
+                        </div>
+
+                        <p>
+                            Các lá thư tiếp theo
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+
+            </div>
+
+            <div class="taletter-section">
+
+                <div class="taletter-title">
+
+                    Cách đặt lá thư
+
+                    <span></span>
+
+                </div>
+
+
+                <div class="taletter-steps">
+
+
+                    <div class="taletter-step">
+
+                        <div class="taletter-number">
+                            1
+                        </div>
+
+                        <strong>
+                            Quét QR Zalo
+                        </strong>
+
+                        <p>
+                            Quét mã QR bên dưới để
+                            liên hệ và đặt lá thư.
+                        </p>
+
+                    </div>
+
+
+                    <div class="taletter-step">
+
+                        <div class="taletter-number">
+                            2
+                        </div>
+
+                        <strong>
+                            Gửi yêu cầu
+                        </strong>
+
+                        <p>
+                            Gửi tựa thư, nội dung,
+                            chữ ký và bài hát bạn muốn chọn.
+                        </p>
+
+                    </div>
+
+
+                    <div class="taletter-step">
+
+                        <div class="taletter-number">
+                            3
+                        </div>
+
+                        <strong>
+                            Nhận lá thư
+                        </strong>
+
+                        <p>
+                            Lá thư sẽ được tạo theo yêu cầu
+                            và gửi lại cho bạn.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="taletter-contact">
+
+                <h2>
+                    📱 LIÊN HỆ ĐẶT LÁ THƯ
+                </h2>
+
+                <p>
+                    Quét mã QR Zalo để liên hệ và gửi yêu cầu
+                </p>
+
+                <img
+                    class="taletter-qr"
+                    src="https://cdn.jsdelivr.net/gh/dulieublog2/img/imggg/zl.jpg"
+                    alt="Mã QR Zalo">
+
+
+                <br>
+
+
+                <a
+                    href="https://www.facebook.com/taoanhfree/"
+                    class="taletter-zalo"
+                    target="_blank">
+
+                    💬 Liên hệ qua Facebook
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="taletter-footer">
+
+            💗
+            <strong>
+                Một lá thư – Một câu chuyện – Một kỷ niệm
+            </strong>
+
+            <br>
+
+            Hãy gửi những điều bạn chưa từng nói thành lời.
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
