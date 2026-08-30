@@ -3,7 +3,6 @@
 <head>
   <title>Tạo lá thư theo yêu cầu 💌</title>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <link rel="icon" type="image/webp" href="https://loitutraitim.github.io/img/favicon.webp">
   <meta property="og:image" content="https://loitutraitim.github.io/img/bia.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -202,6 +201,108 @@
 .taletter-order-info {
     display: grid;
     gap: 14px;
+}
+
+/* BỘ ĐẾM KÝ TỰ */
+.taletter-counter-box {
+    margin-top: 18px;
+    padding: 22px;
+    background: linear-gradient(145deg, #fff7fa, #fff);
+    border: 1px solid #ffdce7;
+    border-radius: 18px;
+}
+
+.taletter-counter-box h3 {
+    margin: 0 0 7px;
+    color: #e94678;
+    font-size: 18px;
+}
+
+.taletter-counter-box p {
+    margin: 0 0 12px;
+    color: #777;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.taletter-counter-box textarea {
+    width: 100%;
+    min-height: 130px;
+    padding: 14px;
+    resize: vertical;
+    border: 1px solid #ffd1df;
+    border-radius: 13px;
+    outline: none;
+    font-family: inherit;
+    font-size: 15px;
+    line-height: 1.7;
+    color: #444;
+    background: #fff;
+}
+
+.taletter-counter-box textarea:focus {
+    border-color: #ff7fa4;
+    box-shadow: 0 0 0 3px rgba(255, 105, 150, .10);
+}
+
+.taletter-counter-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.taletter-counter {
+    color: #e94678;
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.taletter-counter-note {
+    color: #999;
+    font-size: 12px;
+}
+
+
+.taletter-copy-btn {
+    border: none;
+    padding: 10px 16px;
+    border-radius: 25px;
+    background: linear-gradient(135deg, #ff5d91, #ff8fb0);
+    color: #fff;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 800;
+    cursor: pointer;
+    box-shadow: 0 5px 14px rgba(255, 90, 140, .18);
+    transition: .25s ease;
+}
+
+.taletter-copy-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(255, 90, 140, .25);
+}
+
+.taletter-copy-btn:active {
+    transform: scale(.97);
+}
+
+@media (max-width: 700px) {
+    .taletter-copy-btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 700px) {
+    .taletter-counter-box {
+        padding: 17px;
+    }
+
+    .taletter-counter-bottom {
+        align-items: flex-start;
+        flex-direction: column;
+    }
 }
 
 .taletter-order-item {
@@ -488,231 +589,69 @@
 
 @media (max-width: 700px) {
 
-    html {
-        width: 100%;
-        overflow-x: hidden;
-    }
-
-    body {
-        width: 100%;
-        margin: 0;
-        padding: 0;
-        overflow-x: hidden;
-    }
-
     .taletter-wrap {
-        width: 100%;
-        max-width: 100%;
-        margin: 0 auto;
-        padding: 8px;
+        margin: 15px auto;
+        padding: 0 10px;
     }
 
     .taletter-box {
-        width: 100%;
-        border-radius: 18px;
+        border-radius: 20px;
     }
 
     .taletter-hero {
-        padding: 32px 16px 30px;
-    }
-
-    .taletter-hero::before,
-    .taletter-hero::after {
-        font-size: 60px;
-    }
-
-    .taletter-icon {
-        width: 62px;
-        height: 62px;
-        margin-bottom: 14px;
-        font-size: 30px;
+        padding: 40px 18px;
     }
 
     .taletter-hero h1 {
-        font-size: 23px;
-        line-height: 1.3;
-        margin-bottom: 10px;
+        font-size: 26px;
     }
 
     .taletter-hero p {
-        max-width: 100%;
-        font-size: 14px;
-        line-height: 1.6;
-    }
-
-    .taletter-demo {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        max-width: 100%;
-        padding: 11px 18px;
         font-size: 14px;
     }
 
     .taletter-content {
-        padding: 22px 12px;
-    }
-
-    .taletter-section {
-        margin-bottom: 28px;
-    }
-
-    .taletter-title {
-        font-size: 20px;
-        line-height: 1.35;
-        margin-bottom: 18px;
+        padding: 25px 15px;
     }
 
     .taletter-features,
     .taletter-steps,
     .taletter-pricing {
         grid-template-columns: 1fr;
-        gap: 12px;
-    }
-
-    .taletter-feature {
-        padding: 18px 14px;
-        border-radius: 15px;
-    }
-
-    .taletter-feature-icon {
-        font-size: 28px;
-        margin-bottom: 7px;
-    }
-
-    .taletter-feature p,
-    .taletter-step p,
-    .taletter-order-item p {
-        font-size: 13.5px;
-        line-height: 1.55;
-    }
-
-    .taletter-music {
-        padding: 20px 15px;
-        border-radius: 16px;
-    }
-
-    .taletter-music .music-icon {
-        font-size: 36px;
-    }
-
-    .taletter-music h3 {
-        font-size: 18px;
-    }
-
-    .taletter-order-info {
-        gap: 10px;
-    }
-
-    .taletter-order-item {
-        width: 100%;
-        padding: 13px;
-        gap: 10px;
-        border-radius: 14px;
-    }
-
-    .taletter-order-icon {
-        flex: 0 0 38px;
-        width: 38px;
-        height: 38px;
-        border-radius: 11px;
-        font-size: 18px;
-    }
-
-    .taletter-order-item strong {
-        font-size: 15px;
-        margin-bottom: 4px;
-    }
-
-    .taletter-order-item span {
-        font-size: 12px;
-    }
-
-    .taletter-price-card {
-        width: 100%;
-        padding: 22px 15px;
-        border-radius: 16px;
-    }
-
-    .taletter-price {
-        font-size: 27px;
-    }
-
-    .taletter-badge {
-        font-size: 11px;
-        padding: 5px 13px;
-    }
-
-    .taletter-step {
-        padding: 8px 12px;
-    }
-
-    .taletter-number {
-        width: 42px;
-        height: 42px;
-        font-size: 17px;
-        margin-bottom: 9px;
-    }
-
-    .taletter-contact {
-        padding: 24px 14px;
-        border-radius: 17px;
-    }
-
-    .taletter-contact h2 {
-        font-size: 19px;
-        line-height: 1.35;
-    }
-
-    .taletter-contact p {
-        font-size: 14px;
-        line-height: 1.55;
-    }
-
-    .taletter-qr {
-        width: min(170px, 70vw);
-        height: min(170px, 70vw);
-    }
-
-    .taletter-zalo {
-        width: 100%;
-        max-width: 280px;
-        padding: 11px 16px;
-        font-size: 14px;
-    }
-
-    .taletter-footer {
-        padding: 20px 12px;
-        font-size: 13px;
-    }
-}
-
-@media (max-width: 380px) {
-    .taletter-wrap {
-        padding: 5px;
-    }
-
-    .taletter-hero h1 {
-        font-size: 21px;
-    }
-
-    .taletter-content {
-        padding: 20px 10px;
     }
 
     .taletter-title {
-        font-size: 18px;
+        font-size: 21px;
+    }
+
+    .taletter-table {
+        font-size: 14px;
+    }
+
+    .taletter-table th,
+    .taletter-table td {
+        padding: 10px 5px;
     }
 
     .taletter-order-item {
-        padding: 11px;
+        padding: 15px;
+        gap: 12px;
     }
 
     .taletter-order-icon {
-        flex-basis: 35px;
-        width: 35px;
-        height: 35px;
-        font-size: 17px;
+        flex-basis: 40px;
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+
+    .taletter-price {
+        font-size: 28px;
+    }
+
+    .taletter-qr {
+        width: 170px;
+        height: 170px;
     }
 }
 </style>
@@ -902,6 +841,26 @@
                         </div>
 
                     </div>
+                   <div class="taletter-order-item">
+
+                        <div class="taletter-order-icon">
+                            🖼️
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Ảnh của bạn
+                            </strong>
+
+                            <p>
+                                Hình ảnh bạn muốn sử dụng
+                                trong lá thư.
+                            </p>
+
+                        </div>
+
+                    </div>
                     <div class="taletter-order-item">
 
                         <div class="taletter-order-icon">
@@ -952,6 +911,32 @@
 
                         </div>
 
+                    </div>
+
+
+                  
+
+                    <!-- BỘ ĐẾM KÝ TỰ CHO NGƯỜI DÙNG THỬ -->
+                    <div class="taletter-counter-box">
+                        <h3>✍️ Thử nhập nội dung thư</h3>
+                        <p>
+                            Nhập thử nội dung bên dưới để kiểm tra số ký tự.
+                        </p>
+
+                        <textarea
+                            id="taletterCounterInput"
+                            maxlength="340"
+                            placeholder="Nhập thử lời nhắn của bạn..."></textarea>
+
+                        <div class="taletter-counter-bottom">
+                            <div class="taletter-counter">
+                                <span id="taletterCharCount">0</span> / 340 ký tự
+                            </div>
+
+                            <button type="button" id="taletterCopyButton" class="taletter-copy-btn">
+                                📋 Sao chép
+                            </button>
+                        </div>
                     </div>
 
                 </div>
@@ -1066,7 +1051,7 @@
 
                         <p>
                             Gửi tựa thư, nội dung,
-                            chữ ký và bài hát bạn muốn chọn.
+                            chữ ký, bài hát và ảnh của bạn (nếu có).
                         </p>
 
                     </div>
@@ -1142,6 +1127,57 @@
     </div>
 
 </div>
+
+
+<script>
+(function () {
+    const input = document.getElementById('taletterCounterInput');
+    const counter = document.getElementById('taletterCharCount');
+    const storageKey = 'taletter_counter_content';
+    const copyButton = document.getElementById('taletterCopyButton');
+
+    if (!input || !counter) return;
+
+    function updateCounter() {
+        counter.textContent = input.value.length;
+        localStorage.setItem(storageKey, input.value);
+    }
+
+    const saved = localStorage.getItem(storageKey);
+    if (saved !== null) input.value = saved;
+
+    updateCounter();
+    input.addEventListener('input', updateCounter);
+
+    if (copyButton) {
+        copyButton.addEventListener('click', async function () {
+            const text = input.value;
+
+            if (!text.trim()) {
+                copyButton.textContent = '⚠️ Chưa có nội dung';
+                setTimeout(() => {
+                    copyButton.textContent = '📋 Sao chép nội dung';
+                }, 1500);
+                return;
+            }
+
+            try {
+                await navigator.clipboard.writeText(text);
+            } catch (err) {
+                input.focus();
+                input.select();
+                document.execCommand('copy');
+                input.setSelectionRange(input.value.length, input.value.length);
+            }
+
+            copyButton.textContent = '✅ Đã sao chép!';
+            setTimeout(() => {
+                copyButton.textContent = '📋 Sao chép nội dung';
+            }, 1500);
+        });
+    }
+})();
+</script>
 
 </body>
 </html>
