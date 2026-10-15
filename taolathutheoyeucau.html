@@ -3,6 +3,7 @@
 <head>
   <title>Tạo lá thư theo yêu cầu 💌</title>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <link rel="icon" type="image/webp" href="https://loitutraitim.github.io/img/favicon.webp">
   <meta property="og:image" content="https://loitutraitim.github.io/img/bia.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -654,6 +655,235 @@
         height: 170px;
     }
 }
+
+/* Tối ưu trải nghiệm trên điện thoại */
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+body {
+  margin: 0;
+}
+.taletter-wrap,
+.taletter-wrap * {
+  min-width: 0;
+}
+.taletter-wrap img {
+  max-width: 100%;
+}
+.taletter-wrap a,
+.taletter-wrap button,
+.taletter-wrap textarea {
+  -webkit-tap-highlight-color: transparent;
+}
+.taletter-wrap textarea,
+.taletter-wrap button {
+  touch-action: manipulation;
+}
+.taletter-wrap textarea {
+  display: block;
+  max-width: 100%;
+}
+.taletter-table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.taletter-table th,
+.taletter-table td {
+  overflow-wrap: anywhere;
+}
+@media (max-width: 700px) {
+  .taletter-wrap {
+    width: 100%;
+    margin: 8px auto;
+    padding: 0 8px;
+    font-size: 15px;
+  }
+  .taletter-box {
+    border-radius: 16px;
+  }
+  .taletter-hero {
+    padding: 30px 16px 28px;
+  }
+  .taletter-hero::before,
+  .taletter-hero::after {
+    font-size: 58px;
+  }
+  .taletter-icon {
+    width: 58px;
+    height: 58px;
+    margin-bottom: 12px;
+    font-size: 29px;
+  }
+  .taletter-hero h1 {
+    font-size: clamp(21px, 6vw, 26px);
+    line-height: 1.3;
+    overflow-wrap: anywhere;
+  }
+  .taletter-hero p {
+    font-size: 14px;
+    line-height: 1.65;
+  }
+  .taletter-demo {
+    display: block;
+    width: 100%;
+    margin-top: 18px;
+    padding: 13px 14px;
+    line-height: 1.4;
+  }
+  .taletter-content {
+    padding: 22px 12px;
+  }
+  .taletter-section {
+    margin-bottom: 28px;
+  }
+  .taletter-title {
+    font-size: 20px;
+    line-height: 1.4;
+    margin-bottom: 17px;
+  }
+  .taletter-features,
+  .taletter-steps,
+  .taletter-pricing {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+  }
+  .taletter-feature {
+    padding: 17px 14px;
+  }
+  .taletter-feature-icon {
+    font-size: 28px;
+    margin-bottom: 6px;
+  }
+  .taletter-music {
+    padding: 20px 15px;
+    border-radius: 16px;
+  }
+  .taletter-music h3 {
+    font-size: 18px;
+    line-height: 1.4;
+  }
+  .taletter-order-item {
+    padding: 13px 12px;
+    gap: 10px;
+    border-radius: 14px;
+  }
+  .taletter-order-icon {
+    flex: 0 0 36px;
+    width: 36px;
+    height: 36px;
+    border-radius: 11px;
+    font-size: 18px;
+  }
+  .taletter-order-item strong {
+    font-size: 15px;
+    line-height: 1.4;
+  }
+  .taletter-order-item p {
+    font-size: 13px;
+    line-height: 1.65;
+    overflow-wrap: anywhere;
+  }
+  .taletter-order-item span {
+    font-size: 12px;
+  }
+  .taletter-counter-box {
+    padding: 14px 12px;
+    border-radius: 14px;
+  }
+  .taletter-counter-box h3 {
+    font-size: 17px;
+    line-height: 1.4;
+  }
+  .taletter-counter-box textarea {
+    min-height: 140px;
+    padding: 12px;
+    font-size: 16px; /* Tránh iPhone tự phóng to khi nhập */
+    line-height: 1.6;
+    resize: none;
+  }
+  .taletter-counter-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+  .taletter-counter {
+    font-size: 14px;
+  }
+  .taletter-counter-note {
+    font-size: 12px;
+  }
+  .taletter-copy-btn {
+    width: 100%;
+    min-height: 44px;
+    padding: 12px 14px;
+    font-size: 14px;
+  }
+  .taletter-price-card {
+    padding: 24px 16px 18px;
+    border-radius: 16px;
+  }
+  .taletter-price {
+    font-size: 29px;
+  }
+  .taletter-badge {
+    max-width: calc(100% - 24px);
+    padding: 5px 12px;
+    font-size: 11px;
+  }
+  .taletter-step {
+    padding: 12px 8px;
+  }
+  .taletter-contact {
+    padding: 24px 14px;
+    border-radius: 17px;
+  }
+  .taletter-contact h2 {
+    font-size: 20px;
+    line-height: 1.4;
+  }
+  .taletter-contact p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  .taletter-qr {
+    width: min(190px, 70vw);
+    height: auto;
+    aspect-ratio: 1;
+  }
+  .taletter-zalo {
+    display: block;
+    width: 100%;
+    padding: 13px 14px;
+    line-height: 1.4;
+  }
+  .taletter-footer {
+    padding: 20px 14px;
+    font-size: 13px;
+  }
+}
+@media (max-width: 360px) {
+  .taletter-wrap {
+    padding: 0 5px;
+  }
+  .taletter-content {
+    padding: 18px 9px;
+  }
+  .taletter-order-item {
+    gap: 8px;
+    padding: 12px 9px;
+  }
+  .taletter-order-icon {
+    flex-basis: 32px;
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -1140,11 +1370,19 @@
 
     function updateCounter() {
         counter.textContent = input.value.length;
-        localStorage.setItem(storageKey, input.value);
+        try {
+            localStorage.setItem(storageKey, input.value);
+        } catch (err) {
+            // Vẫn cập nhật bộ đếm nếu trình duyệt chặn localStorage.
+        }
     }
 
-    const saved = localStorage.getItem(storageKey);
-    if (saved !== null) input.value = saved;
+    try {
+        const saved = localStorage.getItem(storageKey);
+        if (saved !== null) input.value = saved;
+    } catch (err) {
+        // Bỏ qua nếu trình duyệt không cho truy cập localStorage.
+    }
 
     updateCounter();
     input.addEventListener('input', updateCounter);
@@ -1172,7 +1410,7 @@
 
             copyButton.textContent = '✅ Đã sao chép!';
             setTimeout(() => {
-                copyButton.textContent = '📋 Sao chép nội dung';
+                copyButton.textContent = '📋 Sao chép';
             }, 1500);
         });
     }
